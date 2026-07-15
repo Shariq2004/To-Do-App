@@ -2,8 +2,6 @@ let inputBox = document.querySelector("#input-box");
 let addBtn = document.querySelector("#add-btn");
 let listContainer = document.querySelector("#list-container");
 
-
-
 addBtn.addEventListener("click",function(){
 
     if(inputBox.value === ''){
@@ -12,13 +10,10 @@ addBtn.addEventListener("click",function(){
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
-
-        let crossbtn = document.createElement("span");
-        crossbtn.innerHTML = "✖";
-        li.appendChild(crossbtn);
-       
         
-        
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
     }
     inputBox.value = "";
     saveData();
@@ -44,14 +39,4 @@ function saveData(){
 function  showData(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
-
 showData();
-
-
-
-
-
-
-
-
-
