@@ -13,7 +13,7 @@ addBtn.addEventListener("click",function(){
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
 
-        let crossbtn = document.createElement("button");
+        let crossbtn = document.createElement("span");
         crossbtn.innerHTML = "✖";
         li.appendChild(crossbtn);
        
@@ -30,7 +30,7 @@ listContainer.addEventListener("click",function(e){
         e.target.classList.toggle("checked");
         saveData();
     }
-    else if(e.target.nodeName === "BUTTON"){
+    else if(e.target.nodeName === "SPAN"){
        e.target.parentElement.remove();
        saveData();
     }
